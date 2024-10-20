@@ -1,0 +1,16 @@
+
+Q3: Show the date of birth (dob) of Lauren Holiday.
+
+MATCH (n:Person {name:'Lauren Holiday'}) return (n.dob)
+
+
+
+Q5: Show the number of squads that 'Kelley O Hara' was in.
+
+MATCH (n:Person {name:'Kelley O Hara'}) -[IN_SQUAD]-> (k:Squad) return count(k)
+
+
+Q7: Who was the coach of the USA squad in 2019 (that is, the squad whose id is "USA in 2019")?
+
+MATCH (n:Person) -[:COACH_FOR]-> (k:Squad {id:'USA in 2019'}) return n.name
+
